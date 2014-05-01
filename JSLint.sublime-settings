@@ -1,28 +1,30 @@
 {
     // an array of options to pass to jslint.
-    "options" : [
+    "options" : { 
+        "js": [
 
-        // examples using predef flag.
-        "--predef", "['angular', 'document', '\\$', '_', 'JQuery', 'FB']"
-        // tolerate missing 'use strict' pragma.
-        ,"--sloppy"
-        // suggest an indent level of two spaces.
-        ,"--indent", "2"
-        // assume node.js to predefine node globals.
-        ,"--node"
-        // tolerate unfiltered for in.
-        //,"--forin"
-        // tolerate dangling _ in identifiers.
-        ,"--nomen"
-        // tolerate many var statements per function.
-        ,"--vars"
-        // tolerate ++ and --.
-        ,"--plusplus"
-        // tolerate Douglas Crockford.
-        ,"--stupid"
-        ,"--todo"
+            // examples using predef flag.
+            "--predef", "['angular', 'document', '\\$', '_', 'JQuery', 'FB']"
+            // tolerate missing 'use strict' pragma.
+            ,"--sloppy"
+            // suggest an indent level of two spaces.
+            ,"--indent", "2"
+            // assume node.js to predefine node globals.
+            ,"--node"
+            // tolerate unfiltered for in.
+            //,"--forin"
+            // tolerate dangling _ in identifiers.
+            ,"--nomen"
+            // tolerate many var statements per function.
+            ,"--vars"
+            // tolerate ++ and --.
+            ,"--plusplus"
+            // tolerate Douglas Crockford.
+            ,"--stupid"
+            ,"--todo"
 
-    ]
+        ]
+    }
 
     // if true, run jslint on save.
     ,"run_on_save" : true
@@ -31,7 +33,10 @@
     // should be run on a file.
     // if a match is found (i.e. re.search(filename_filter, filename)),
     // the file will be linted.
-    ,"filename_filter": "(\\.js|\\.json|\\.html|\\.sass|\\.less|\\.html)$"
+    ,"filename_filter": {
+        "js": "(\\.js|\\.json|\\.html|\\.sass|\\.less|\\.html)$",
+        "coffee": "(\\.coffee|\\.iced)$"
+    }
 
 
     // jslint command you want to run as an array of strings.
@@ -43,6 +48,8 @@
 
     // ,"jslint" : ["jslint"]
 
+    // Add something like this if you are on Windows:
+    //, "coffeelint": ["node", "C:\\Users\\Zapu\\AppData\\Roaming\\npm\\node_modules\\coffeelint\\bin\\coffeelint"]
 
     // if your own personal choice of jslint has an output
     // different from the standard which comes with this package,
